@@ -10,6 +10,8 @@ import {
   Users,
   ChevronRight,
   Menu,
+  Phone,
+  Mail,
 } from 'lucide-react';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -217,6 +219,21 @@ export default function Component() {
                     Contact Us
                   </Button>
                 </form>
+                <div className='flex flex-col sm:flex-row items-center justify-center gap-4 mt-4'>
+                  <div className='flex items-center gap-2'>
+                    <Phone className='h-5 w-5 text-indigo-600' />
+                    <span className='text-gray-600'>+971 043281716</span>
+                  </div>
+                  <div className='flex items-center gap-2'>
+                    <Mail className='h-5 w-5 text-indigo-600' />
+                    <a
+                      href='mailto:careers@soultrading.com'
+                      className='text-gray-600 hover:text-indigo-600'
+                    >
+                      career@soultrading.co
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
