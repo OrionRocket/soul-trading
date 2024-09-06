@@ -2,21 +2,10 @@
 
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import {
-  Laptop,
-  Server,
-  Shield,
-  Code,
-  Users,
-  ChevronRight,
-  Menu,
-} from 'lucide-react';
+import { Laptop, Server, Shield, Code, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
-import { useState } from 'react';
 
-export default function Component() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+export function SoulTradingPage() {
   return (
     <div className='flex flex-col min-h-screen'>
       <header className='px-4 lg:px-6 h-16 flex items-center bg-white shadow-sm'>
@@ -26,17 +15,7 @@ export default function Component() {
             Soul Trading
           </span>
         </Link>
-        <button
-          className='ml-auto lg:hidden'
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-        >
-          <Menu className='h-6 w-6 text-gray-600' />
-        </button>
-        <nav
-          className={`${
-            isMenuOpen ? 'flex' : 'hidden'
-          } lg:flex absolute top-16 left-0 right-0 bg-white shadow-md lg:shadow-none flex-col lg:flex-row gap-4 p-4 lg:p-0 lg:static lg:ml-auto`}
-        >
+        <nav className='ml-auto flex gap-4 sm:gap-6'>
           <Link
             className='text-sm font-medium hover:text-indigo-600'
             href='#services'
@@ -65,18 +44,18 @@ export default function Component() {
       </header>
       <main className='flex-1'>
         <section className='w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-indigo-50'>
-          <div className='container px-4 md:px-6 mx-auto'>
+          <div className='container px-4 md:px-6'>
             <div className='flex flex-col items-center space-y-4 text-center'>
               <div className='space-y-2'>
                 <h1 className='text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none text-indigo-800'>
                   Innovative IT Solutions for Your Business
                 </h1>
-                <p className='mx-auto max-w-[700px] text-gray-600 md:text-xl text-sm sm:text-base'>
+                <p className='mx-auto max-w-[700px] text-gray-600 md:text-xl'>
                   Empowering businesses with cutting-edge technology since 2010.
                   Transform your operations with Soul Trading.
                 </p>
               </div>
-              <div className='flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4'>
+              <div className='space-x-4'>
                 <Button className='bg-indigo-600 text-white hover:bg-indigo-700'>
                   Get Started
                 </Button>
@@ -90,9 +69,12 @@ export default function Component() {
             </div>
           </div>
         </section>
-        <section id='services' className='w-full py-12 md:py-24 lg:py-32'>
-          <div className='container px-4 md:px-6   mx-auto'>
-            <h2 className='text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-8 md:mb-12 text-gray-900'>
+        <section
+          id='services'
+          className='w-full py-12 md:py-24 lg:py-32 items-center justify-center'
+        >
+          <div className='container px-4 md:px-6 flex flex-col items-center justify-center bg-red-300'>
+            <h2 className='text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12 text-gray-900'>
               Our Services
             </h2>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
@@ -101,7 +83,7 @@ export default function Component() {
                 <h3 className='text-xl font-bold mb-2 text-gray-900'>
                   IT Consulting
                 </h3>
-                <p className='text-gray-600 text-sm sm:text-base'>
+                <p className='text-gray-600'>
                   Strategic technology planning and implementation guidance for
                   your business growth.
                 </p>
@@ -111,7 +93,7 @@ export default function Component() {
                 <h3 className='text-xl font-bold mb-2 text-gray-900'>
                   Cloud Solutions
                 </h3>
-                <p className='text-gray-600 text-sm sm:text-base'>
+                <p className='text-gray-600'>
                   Secure and scalable cloud infrastructure to enhance your
                   operational efficiency.
                 </p>
@@ -121,7 +103,7 @@ export default function Component() {
                 <h3 className='text-xl font-bold mb-2 text-gray-900'>
                   Cybersecurity
                 </h3>
-                <p className='text-gray-600 text-sm sm:text-base'>
+                <p className='text-gray-600'>
                   Comprehensive security solutions to protect your valuable
                   digital assets.
                 </p>
@@ -133,21 +115,21 @@ export default function Component() {
           id='about'
           className='w-full py-12 md:py-24 lg:py-32 bg-gray-50'
         >
-          <div className='container px-4 md:px-6 mx-auto'>
+          <div className='container px-4 md:px-6'>
             <div className='grid items-center gap-6 lg:grid-cols-2 lg:gap-12'>
               <img
                 alt='Soul Trading team'
                 className='mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last'
                 height='310'
-                src='/placeholder.jpg'
+                src='/placeholder.svg?height=310&width=550'
                 width='550'
               />
               <div className='flex flex-col justify-center space-y-4'>
                 <div className='space-y-2'>
-                  <h2 className='text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-gray-900'>
+                  <h2 className='text-3xl font-bold tracking-tighter sm:text-5xl text-gray-900'>
                     About Soul Trading
                   </h2>
-                  <p className='max-w-[600px] text-gray-600 text-sm sm:text-base md:text-lg lg:text-base xl:text-lg'>
+                  <p className='max-w-[600px] text-gray-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed'>
                     Established in 2010, Soul Trading has been at the forefront
                     of IT innovation for over a decade. Our passionate team of
                     experts is dedicated to delivering tailored technology
@@ -163,28 +145,28 @@ export default function Component() {
           </div>
         </section>
         <section id='testimonials' className='w-full py-12 md:py-24 lg:py-32'>
-          <div className='container px-4 md:px-6 mx-auto'>
-            <h2 className='text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center mb-8 md:mb-12 text-gray-900'>
+          <div className='container px-4 md:px-6'>
+            <h2 className='text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-12 text-gray-900'>
               What Our Clients Say
             </h2>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
               <div className='flex flex-col p-6 bg-white rounded-lg shadow-lg'>
-                <p className='text-gray-600 mb-4 text-sm sm:text-base'>
+                <p className='text-gray-600 mb-4'>
                   "Soul Trading transformed our IT infrastructure, significantly
                   improving our efficiency and security. Their expertise is
                   unmatched!"
                 </p>
-                <p className='text-indigo-600 font-semibold text-sm sm:text-base'>
+                <p className='text-indigo-600 font-semibold'>
                   - Sarah Johnson, CEO of TechCorp
                 </p>
               </div>
               <div className='flex flex-col p-6 bg-white rounded-lg shadow-lg'>
-                <p className='text-gray-600 mb-4 text-sm sm:text-base'>
+                <p className='text-gray-600 mb-4'>
                   "The cloud migration led by Soul Trading was seamless. Their
                   team's professionalism and knowledge made a complex process
                   feel easy."
                 </p>
-                <p className='text-indigo-600 font-semibold text-sm sm:text-base'>
+                <p className='text-indigo-600 font-semibold'>
                   - Mark Thompson, CTO of InnovateTech
                 </p>
               </div>
@@ -195,13 +177,13 @@ export default function Component() {
           id='contact'
           className='w-full py-12 md:py-24 lg:py-32 bg-indigo-50'
         >
-          <div className='container px-4 md:px-6 mx-auto'>
+          <div className='container px-4 md:px-6'>
             <div className='flex flex-col items-center space-y-4 text-center'>
               <div className='space-y-2'>
-                <h2 className='text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-gray-900'>
+                <h2 className='text-3xl font-bold tracking-tighter sm:text-5xl text-gray-900'>
                   Get in Touch
                 </h2>
-                <p className='max-w-[600px] text-gray-600 text-sm sm:text-base md:text-lg lg:text-base xl:text-lg'>
+                <p className='max-w-[600px] text-gray-600 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed'>
                   Ready to elevate your IT infrastructure? Contact us today for
                   a free consultation.
                 </p>
